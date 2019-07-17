@@ -45,7 +45,8 @@ $( "#super_btn").bind("click", add_selected_class);
         selector = $("[column="+ selection.column +"][row="+ selection.row +"]");
 
         selector.addClass("selected");
-        // console.log("added class");
+
+        // updating the piece on the newly clicked square
         selector.attr("piece", "b_queen");
 
     }
@@ -65,8 +66,8 @@ $( "#super_btn").bind("click", add_selected_class);
 
 
 function get_sides() {
-    let side = $('[w_queen]').prop("row");
-    let side2 = $('[w_queen]').attr("row");
+    let side = $('[piece=b_queen]').attr("row");
+    let side2 = $('[piece=w_queen]').attr("row");
 
 
     console.log("white side is on " + side);
