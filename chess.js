@@ -21,6 +21,8 @@ $( "#chess_board").click(function( event ) {
 
     $( "#log" ).html( "clicked: " + event.target.getAttribute("row") + "x" + event.target.getAttribute("column") + "<br />" + selection.piece);
 
+    get_sides();
+
     add_selected_class();
 
 });
@@ -59,9 +61,17 @@ $( "#super_btn").bind("click", add_selected_class);
 
 };
 
+//------------------Game Setup-----------------------------
+
 
 function get_sides() {
-    $('[w_queen]').getAttribute('row')
+    let side = $('[w_queen]').prop("row");
+    let side2 = $('[w_queen]').attr("row");
+
+
+    console.log("white side is on " + side);
+    console.log("side2 is  " + side2);
+// showing undefined in both cases
 }
 
 //------------------Movement Functions-----------------------------
