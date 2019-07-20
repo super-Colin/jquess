@@ -6,7 +6,7 @@ let selection = {
 
 
 let selector = '';
-let move_selector = [];
+let move_selector = ['','',''];
 let last_selector = '';
 let side = false;
 
@@ -27,6 +27,7 @@ $( "#chess_board").click(function( event ) {
 
     $( "#log" ).html( "clicked: " + event.target.getAttribute("row") + "x" + event.target.getAttribute("column") + "<br />" + selection.piece);
 
+//cheese
 
     add_selected_class();
     piece_check();
