@@ -3,8 +3,13 @@ let selection = {
     row:'',
     col:''
 };
+let last_selection = {
+    piece:'',
+    row:'',
+    col:''
+};
 
-
+let new_selector = '';
 let selector = '';
 let move_selector = ['','',''];
 let last_selector = '';
@@ -15,9 +20,17 @@ let direction = '';
 let moved = false;
 
 
+// this is run everytime the board is clicked
+function run_chess(){
+    
+}
+
+
 // anytime the board is clicked update the selection
 $( "#chess_board").click(function( event ) {
 
+    // spacer between click functions
+    console.log('-----------')
 
     // updating the selection variable
     selection.piece = event.target.getAttribute("piece");
@@ -25,43 +38,15 @@ $( "#chess_board").click(function( event ) {
     selection.col = event.target.getAttribute("column");
 
 
-    $( "#log" ).html( "clicked: " + event.target.getAttribute("row") + "x" + event.target.getAttribute("column") + "<br />" + selection.piece);
-
-//cheese
-//and nachos
-
+    selection_update();
     add_selected_class();
     piece_check();
 
 });
 
+    
+
 $( "#super_btn").bind("click", add_selected_class);
-
-    function add_selected_class() {
-
-    // remove the "selected" class from the last selection
-    if (last_selector != ''){
-        last_selector.removeClass("selected");
-    }
-    // log piece as well as row X column
-    console.log(selection.piece+ " and " + selection.row + "x" + selection.col);
-
-
-    //if selection is defined add the "selected" class to the div that was clicked
-    if (selection.row != ''){
-        selector = $("[column="+ selection.col +"][row="+ selection.row +"]");
-
-        selector.addClass("selected");
-
-        // how to update the piece on the newly clicked square
-        // selector.attr("piece", "b_queen");
-
-    }
-
-    // update last selector to remove "selected" class
-    last_selector = selector;
-
-};
 
 //------------------Game Setup-----------------------------
 
@@ -117,7 +102,7 @@ function pawn_moves() {
 
     let new_row = parseInt(selection.row);
     console.log('starting with ' + new_row)
-    console.log(direction)
+    console.log('direction is ' + direction)
 
 
     if (direction == 'plus'){
@@ -128,7 +113,6 @@ function pawn_moves() {
     }
 
     move_selector[0] = $("[row="+ new_row +"][column="+ selection.col +"]");
-    console.log(move_selector);
     
     
     if ( moved == false) {
@@ -142,7 +126,6 @@ function pawn_moves() {
     }
 
     move_selector[1] = $("[row="+ new_row +"][column="+ selection.col +"]");
-    console.log(move_selector);
 
 
     // how to update the piece on the newly clicked square

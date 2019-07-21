@@ -13,19 +13,21 @@
     width:98vmin;
     height:98vmin;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
+    /* flex-order:reverse; */
     margin: .5rem auto;
     z-index: -1;
 }
 .board{
     z-index: -1;
 }
-.selected{
-    background-color: rgba(80, 120, 80, 0.7) !important;
-}
 .valid_move{
     background-color: rgba(80, 120, 180, 0.7) !important;
 }
+.selected{
+    background-color: rgba(80, 120, 80, 0.7) !important;
+}
+
 
 .square-grey,
 .square-white{
