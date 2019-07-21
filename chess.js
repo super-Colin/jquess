@@ -28,6 +28,7 @@ $( "#chess_board").click(function( event ) {
     $( "#log" ).html( "clicked: " + event.target.getAttribute("row") + "x" + event.target.getAttribute("column") + "<br />" + selection.piece);
 
 //cheese
+//and nachos
 
     add_selected_class();
     piece_check();
