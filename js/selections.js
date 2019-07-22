@@ -45,6 +45,7 @@ function add_selected_class() {
         // remove the "selected" class from the last selection
         if (last_selector != '') {
             last_selector.removeClass("selected");
+            remove_moves = true;
         }
 
         piece= true;

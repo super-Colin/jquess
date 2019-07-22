@@ -60,12 +60,13 @@ function add_valid_moves() {
     for (i = 0; i < move_selector.length; i++){
         move_selector[i].addClass('valid_move');
         console.log(i + ' moves marked');
+        last_move_selector[i] = move_selector[i];
     }
 };
 
 function remove_valid_moves(){
-    for (i = 0; i < move_selector.length; i++){
-        move_selector[i].removeClass('valid_move');
+    for (i = 0; i < last_move_selector.length; i++){
+        last_move_selector[i].removeClass('valid_move');
         console.log(i + ' moves un-marked');
     }
 }
@@ -102,11 +103,7 @@ function pawn_moves() {
 
 
     // how to update the piece on the newly clicked square
-    // move_selector[0].addClass('valid_move');
-    // move_selector[1].addClass('valid_move');
-    console.log(move_selector.length);
-    add_valid_moves();
-    // move_selector.forEach(addClass('valid_move'))
-
+    // console.log(move_selector.length);
+    // add_valid_moves();
 
 }

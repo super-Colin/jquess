@@ -10,8 +10,11 @@ let last_selection = {};
 
 let new_selector = '';
 let selector = '';
-let move_selector = [''];
 let last_selector = '';
+
+let move_selector = [''];
+let last_move_selector = [''];
+let remove_moves = false;
 
 
 let side = false;
@@ -36,13 +39,18 @@ $( "#chess_board").click(function( event ) {
     clicked.col = event.target.getAttribute("column");
 
 
-    selection_update();
-    add_selected_class();
-    piece_check();
+    
+    selection_update(); //deciding if the clicked square is a piece or not
+    add_selected_class(); // if it is we add a class to it to highlight it
 
-    if(piece= true){
-        // add_valid_moves();
+    if (remove_moves == true){
+        remove_valid_moves(); //if there are already valid moves we remove them
     }
+    
+    piece_check(); // check what piece and execute that piece's move function
+    add_valid_moves(); // highlight the valid move squares
+
+    move_piece();
 
 
 });
@@ -74,14 +82,6 @@ function white_side_check() {
 
     console.log("white side is on 1 = " + side);
 }
-
-
-
-//------------------Movement Functions-----------------------------
-
-
-
-
 
 
 
