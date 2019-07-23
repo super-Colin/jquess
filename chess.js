@@ -44,20 +44,19 @@ $( "#chess_board").click(function( event ) {
     add_selected_class(); // if it is we add a class to it to highlight it
 
     if (remove_moves == true){
-        remove_valid_moves(); //if there are already valid moves we remove them
+        remove_valid_moves(); //if there are already valid moves remove them
     }
     
     piece_check(); // check what piece and execute that piece's move function
     add_valid_moves(); // highlight the valid move squares
 
-    move_piece();
+    // move_piece();
 
 
 });
 
     
 
-$( "#super_btn").bind("click", add_selected_class);
 
 //------------------Game Setup-----------------------------
 
