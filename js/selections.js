@@ -25,8 +25,6 @@ function add_selected_class() {
         last_selector.removeClass("selected");
     }
 
-    // log piece as well as row X column
-    // console.log(selection.piece + " and " + selection.row + "x" + selection.col);
 
 
     //if selection is defined add the "selected" class to the div that was clicked
